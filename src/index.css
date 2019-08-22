@@ -26,3 +26,8 @@ code {
   padding: 5px;
   margin: 5px;
 }
+
+.error {
+  color: red;
+  font-size: 10px;
+}
