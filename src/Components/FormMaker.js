@@ -41,9 +41,12 @@ const FormMaker = ({errors, touched, values, status }) => {
             </label>
             <button type='submit'>Submit</button>
         </Form>
-        <div className='usersContainer'>
-            <p>{users}</p>
-        </div>
+        {users.map(user => (
+            <ul key={user.id}>
+                <li>Name: {user.name}</li>
+                <li>Email: {user.email}</li>
+            </ul>
+        ))}
         </>
     )
 }
