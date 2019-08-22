@@ -34,19 +34,24 @@ const FormMaker = ({errors, touched, values, status }) => {
             <label className='checkboxContainer'>
                 Terms of Service
                 <Field name='personTOS' type='checkbox' checked={values.personTOS} />
-                <span className='checkmark' />
+                {/* <span className='checkmark' /> */}
                 {touched.personTOS && errors.personTOS && (
                     <p className='error'>{errors.personTOS}</p>
                 )}
             </label>
-            <button type='submit'>Submit</button>
+            <button className='button' type='submit'>Submit</button>
         </Form>
-        {users.map(user => (
-            <ul key={user.id}>
-                <li>Name: {user.name}</li>
-                <li>Email: {user.email}</li>
-            </ul>
-        ))}
+        <h2>List of Users</h2>
+        <div className='userListContainer'>
+            {users.map(user => (
+            <div className='userCard'key={user.id}>
+                <span>Name: {user.personName}</span>
+                <br></br>
+                <span>Email: {user.personEmail}</span>
+            </div> 
+            ))} 
+        </div>
+
         </>
     )
 }
@@ -71,6 +76,7 @@ const FormikFormMaker = withFormik({
     handleSubmit(values, { setStatus }) {
         axios.post('https://reqres.in/api/users/', values)
             .then(res => {
+                console.log(res)
                 setStatus(res.data)
             })
             .catch(err => console.log(err.response))

@@ -4,7 +4,7 @@ import FormMaker from './Components/FormMaker'
 function App() {
   return (
     <div className="App">
-      <p>This is a test.</p>
+      <h2>Input User Here</h2>
       <FormMaker />
     </div>
   )
