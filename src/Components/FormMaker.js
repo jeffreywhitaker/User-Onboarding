@@ -5,19 +5,17 @@ import * as Yup from 'yup'
 
 const FormMaker = ({errors, touched, values, status }) => {
     return (
-        <div classsName="formContainer">
-            <Form>
-                <Field type='text' name='personName' placeholder='' />
-                <Field type='email' name='personEmail' placeholder='' />
-                <Field type='password' name='personPassword' placeholder='' />
-                <label className='checkboxContainer'>
-                    Terms of Service
-                    <Field name='personTOS' type='checkbox' checked={''} />
-                    <span className='checkmark' />
-                </label>
-                <button type='submit'>Submit</button>
-            </Form>
-        </div>
+        <Form className="formContainer">
+            <Field type='text' name='personName' placeholder='Name' />
+            <Field type='email' name='personEmail' placeholder='example@email.com' />
+            <Field type='password' name='personPassword' placeholder='password' />
+            <label className='checkboxContainer'>
+                Terms of Service
+                <Field name='personTOS' type='checkbox' checked={''} />
+                <span className='checkmark' />
+            </label>
+            <button type='submit'>Submit</button>
+        </Form>
     )
 }
 
